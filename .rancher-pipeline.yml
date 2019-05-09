@@ -1,4 +1,4 @@
-stages:
+﻿stages:
 - name: Build
   steps:
   - runScriptConfig:
@@ -19,3 +19,11 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+notification:
+  recipients:
+  - recipient: mdunford@lbl.gov
+    notifier: c-9rmsz:n-gghc7
+  condition:
+  - Success
+  - Changed
+  - Failed
